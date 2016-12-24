@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/SCUnACentralServer.iml" filepath="$PROJECT_DIR$/SCUnACentralServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../SharedDomain/SharedDomain.iml" filepath="$PROJECT_DIR$/../SharedDomain/SharedDomain.iml" />
+    </modules>
+  </component>
+</project>
