@@ -1,9 +1,9 @@
 package ClientConnectionTest.UI;
 
-import Util.ServiziOsservati;
+
 
 import javax.swing.*;
-import java.util.ArrayList;
+
 
 /**
  * Created by Febe on 26/12/2016.
@@ -23,7 +23,6 @@ public class ListaServizi {
 
     public void inizializzaLista(){
 
-        setLista(WatchDogUI.getSingletonInstance().ServiziAperti);
 
         this.lista.add(new JLabel("ciao"));
 

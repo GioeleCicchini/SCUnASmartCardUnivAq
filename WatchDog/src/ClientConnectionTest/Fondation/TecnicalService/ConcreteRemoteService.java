@@ -25,8 +25,8 @@ public class ConcreteRemoteService implements IComRemoteService {
 
 
     @Override
-    public DTO RichiediAlServer(DTO dto) throws IOException {
-        Socket clientSocket = new Socket("localhost", 6789);
+    public DTO RichiediAlServer(DTO dto,String indirizzo,Integer porta) throws IOException {
+        Socket clientSocket = new Socket(indirizzo, porta);
         DTO risp = null;
         try {
             ObjectOutputStream objectOutput = new ObjectOutputStream(clientSocket.getOutputStream());
