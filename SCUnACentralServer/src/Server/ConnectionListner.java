@@ -2,8 +2,11 @@ package Server;
 
 import Server.Controller.ControllerFacade;
 import Server.ServerUtil.RispostaMaker;
+import Server.UI.ServerGUI;
+import Server.UI.UI_ServerFacade;
 import Util.DTO;
 
+import javax.swing.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
@@ -25,8 +28,10 @@ public class ConnectionListner {
     public void StartServer() throws IOException {
 
         try {
-            welcomeSocket = new ServerSocket(6789);
-            System.out.println("Apertura Server");
+            Integer Porta = UI_ServerFacade.getSingletonInstance().getPorta();
+            welcomeSocket = new ServerSocket(Porta);
+            UI_ServerFacade.getSingletonInstance().reportMessage("Server Aperto");
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -45,8 +50,12 @@ public class ConnectionListner {
             try {
 
                 dto = (DTO) objectInput.readObject();
+                String Operazione = dto.getFunzione();
+                UI_ServerFacade.getSingletonInstance().reportMessage("Richiesta : "+Operazione);
+
                 controllerFacade.ArrivaRichiesta(dto);
-                System.out.println("Arrivata Una Richesta");
+
+
                 DTO Risposta = RispostaMaker.getSingletonInstance().PrelevaRisposta();
                 objectOutputStream.writeObject(Risposta);
 
