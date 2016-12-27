@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.net.Socket;
+import java.net.SocketException;
 
 /**
  * Created by gioele on 04/03/16.
@@ -25,25 +26,29 @@ public class ConcreteRemoteService implements IComRemoteService {
 
 
     @Override
-    public DTO RichiediAlServer(DTO dto,String indirizzo,Integer porta) throws IOException {
+    public DTO RichiediAlServer(DTO dto,String indirizzo,Integer porta) throws IOException, ClassNotFoundException {
         Socket clientSocket = new Socket(indirizzo, porta);
         DTO risp = null;
         try {
             ObjectOutputStream objectOutput = new ObjectOutputStream(clientSocket.getOutputStream());
             objectOutput.writeObject(dto);
-            ObjectInputStream objectInputStream = new ObjectInputStream(clientSocket.getInputStream());
-
-
-            risp = (DTO) objectInputStream.readObject();
-
-
+            try {
+                ObjectInputStream objectInputStream = new ObjectInputStream(clientSocket.getInputStream());
+                risp = (DTO) objectInputStream.readObject();
+            }catch (SocketException e){
+                throw new IOException();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            } finally {
+                clientSocket.close();
+            }
         } catch (IOException e) {
-            e.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            clientSocket.close();
+            System.out.println("nessuno in ascolto profondo");
+           throw new IOException();
         }
+
+
 
 
         return risp;

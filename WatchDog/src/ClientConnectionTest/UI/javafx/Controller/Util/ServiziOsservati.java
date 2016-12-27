@@ -5,11 +5,13 @@ import ClientConnectionTest.UI.ListaServizi;
 import Util.DTO;
 import Util.DTOMaker;
 import javafx.application.Platform;
+import javafx.geometry.Insets;
 import javafx.scene.control.Label;
-import javafx.scene.layout.HBox;
+import javafx.scene.layout.*;
 
 import javax.swing.*;
 import java.io.IOException;
+import java.net.SocketException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeoutException;
 
@@ -23,7 +25,7 @@ public class ServiziOsservati {
     ArrayList<Integer> porte = new ArrayList<>();
     ArrayList<Label> label = new ArrayList<>();
 
-    HBox serviziSpace = null;
+    VBox serviziSpace = null;
 
     private static ServiziOsservati singletonInstance = null;
 
@@ -65,7 +67,10 @@ public class ServiziOsservati {
 
     public Label addLabel(String nome){
         Label label = new Label();
-
+        label.setStyle("-fx-border-color:red; -fx-background-color: red; -fx-font-size: 20px");
+        label.setMaxWidth(200);
+        label.setMaxHeight(50);
+        label.setPadding(new Insets(10, 0, 10, 20));
         label.setText(nome);
 
         this.label.add(label);
@@ -87,23 +92,24 @@ public class ServiziOsservati {
                         Platform.runLater(new Runnable() {
                             @Override
                             public void run() {
-                                label.get(finalI).setText(label.get(finalI).getText());
-
+                                label.get(finalI).setStyle("-fx-border-color:green; -fx-background-color: forestgreen; -fx-font-size: 20px");
                     }
                 });
-
                     }
-                } catch (IOException e) {
-
+                }
+                catch (IOException e) {
+                    System.out.println("Nessuno In ascolto");
                     int finalI = i;
                     Platform.runLater(new Runnable() {
                         @Override
                         public void run() {
-                            label.get(finalI).setText("Non in funzione");
+                            label.get(finalI).setStyle("-fx-border-color:darkred; -fx-background-color: red; -fx-font-size: 20px");
                         }
                     });
 
 
+                } catch (ClassNotFoundException e) {
+                    e.printStackTrace();
                 }
             }
 
@@ -111,7 +117,7 @@ public class ServiziOsservati {
     }
 
 
-    public void setServiziSpace(HBox serviziSpace) {
+    public void setServiziSpace(VBox serviziSpace) {
         this.serviziSpace = serviziSpace;
     }
 }

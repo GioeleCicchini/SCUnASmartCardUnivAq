@@ -1,12 +1,19 @@
 package Server.UI;
 
+import Server.UI.javafx.Controller.Util.GraficalElement;
+import javafx.application.Platform;
+import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.VBox;
+
 /**
  * Created by Febe on 26/12/2016.
  */
 public class UI_ServerFacade implements UI_serverFacadeInterface {
 
     Integer Porta = null;
-    ServerGUI serverGUI;
+
+    public VBox Servizi;
+    public AnchorPane scrollPanel;
 
 
     private static UI_ServerFacade singletonInstance = null;
@@ -31,14 +38,23 @@ public class UI_ServerFacade implements UI_serverFacadeInterface {
 
     @Override
     public void reportMessage(String messaggio) {
-        serverGUI.getSingletonInstance().getRegistroTextArea().append(messaggio+" \n");
+
+        Platform.runLater(new Runnable() {
+            @Override public void run() {
+                Servizi.getChildren().add(GraficalElement.getSingletonInstance().getReport(messaggio));
+                scrollPanel.setPrefHeight(Servizi.getHeight()+80);
+            }
+        });
+
+
     }
 
-    public ServerGUI getServerGUI() {
-        return serverGUI;
+
+    public void setServizi(VBox servizi) {
+        Servizi = servizi;
     }
 
-    public void setServerGUI(ServerGUI serverGUI) {
-        this.serverGUI = serverGUI;
+    public void setScrollPanel(AnchorPane scrollPanel) {
+        this.scrollPanel = scrollPanel;
     }
 }

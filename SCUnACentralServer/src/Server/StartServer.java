@@ -1,13 +1,13 @@
 package Server;
 import Server.Controller.*;
-import Server.ServerUtil.RispostaMaker;
-import Server.UI.ServerGUI;
 
 import java.io.IOException;
 
 public class StartServer {
 
 
+
+    private boolean started = false;
     private static StartServer singletonInstance = null;
 
     public static StartServer getSingletonInstance() {
@@ -35,10 +35,16 @@ public class StartServer {
 
         entrataServer.setControllerFacade(controllerFacade);
 
-
+        setStarted(true);
         entrataServer.StartServer();
 
+    }
 
+    public boolean isStarted() {
+        return started;
+    }
 
+    public void setStarted(boolean started) {
+        this.started = started;
     }
 }

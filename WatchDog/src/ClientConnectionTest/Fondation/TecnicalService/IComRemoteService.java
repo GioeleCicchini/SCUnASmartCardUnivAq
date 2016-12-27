@@ -9,7 +9,7 @@ import java.io.IOException;
  */
 public interface IComRemoteService {
 
-    Object RichiediAlServer(DTO dto,String indirizzo,Integer porta) throws IOException;
+    Object RichiediAlServer(DTO dto,String indirizzo,Integer porta) throws IOException, ClassNotFoundException;
 
 
 }

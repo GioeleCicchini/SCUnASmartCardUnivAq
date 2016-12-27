@@ -6,7 +6,7 @@
 <?import java.lang.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientConnectionTest.UI.javafx.Controller.MainUI">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="227.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="ClientConnectionTest.UI.javafx.Controller.MainUI">
    <children>
       <VBox prefHeight="51.0" prefWidth="600.0">
          <children>
@@ -20,51 +20,65 @@
             </Label>
          </children>
       </VBox>
-      <VBox prefHeight="104.0" prefWidth="600.0">
+      <VBox prefHeight="214.0" prefWidth="600.0">
          <children>
-            <GridPane prefHeight="92.0" prefWidth="278.0">
+            <HBox prefHeight="165.0" prefWidth="600.0">
                <children>
-                  <Label prefHeight="17.0" prefWidth="83.0" text="Indirizzo IP" GridPane.rowIndex="1">
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="indirizzoIP" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-                  <Label text="Porta" GridPane.rowIndex="2">
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="porta" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-                  <Button mnemonicParsing="false" onMouseClicked="#Aggiungi" prefHeight="25.0" prefWidth="386.0" text="Aggiungi" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-                  <Label text="Nome">
-                     <GridPane.margin>
-                        <Insets left="20.0" />
-                     </GridPane.margin>
-                  </Label>
-                  <TextField fx:id="nome" GridPane.columnIndex="1" />
+                  <GridPane prefHeight="100.0" prefWidth="302.0">
+                     <children>
+                        <Label prefHeight="17.0" prefWidth="83.0" text="Indirizzo IP" GridPane.rowIndex="1">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="indirizzoIP" prefHeight="25.0" prefWidth="236.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                        <Label text="Porta" GridPane.rowIndex="2">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="porta" prefHeight="25.0" prefWidth="140.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                        <Button mnemonicParsing="false" onMouseClicked="#Aggiungi" prefHeight="25.0" prefWidth="199.0" text="Aggiungi" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                        <Label text="Nome">
+                           <GridPane.margin>
+                              <Insets left="20.0" />
+                           </GridPane.margin>
+                        </Label>
+                        <TextField fx:id="nome" GridPane.columnIndex="1" />
+                     </children>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="295.0" minWidth="10.0" prefWidth="128.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="497.0" minWidth="10.0" prefWidth="174.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                  </GridPane>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+                  <VBox prefHeight="117.0" prefWidth="290.0">
+                     <children>
+                        <ScrollPane prefHeight="562.0" prefWidth="242.0">
+                          <content>
+                            <AnchorPane fx:id="scrollPanel" minHeight="0.0" minWidth="0.0" prefHeight="161.0" prefWidth="226.0">
+                                 <children>
+                                    <VBox fx:id="Servizi" prefHeight="165.0" prefWidth="227.0" spacing="10.0" AnchorPane.topAnchor="0.0">
+                                       <padding>
+                                          <Insets left="10.0" top="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
                </children>
-               <columnConstraints>
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-               </columnConstraints>
-               <rowConstraints>
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-               </rowConstraints>
-            </GridPane>
+            </HBox>
          </children>
       </VBox>
-      <HBox prefHeight="251.0" prefWidth="600.0">
-         <children>
-            <VBox prefHeight="249.0" prefWidth="185.0" />
-            <VBox prefHeight="249.0" prefWidth="417.0">
-               <children>
-                  <HBox fx:id="Servizi" prefHeight="100.0" prefWidth="200.0" />
-               </children></VBox>
-         </children>
-      </HBox>
    </children>
 </VBox>

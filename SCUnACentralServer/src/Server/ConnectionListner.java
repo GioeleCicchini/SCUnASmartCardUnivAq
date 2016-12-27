@@ -2,14 +2,13 @@ package Server;
 
 import Server.Controller.ControllerFacade;
 import Server.ServerUtil.RispostaMaker;
-import Server.UI.ServerGUI;
 import Server.UI.UI_ServerFacade;
 import Util.DTO;
 
-import javax.swing.*;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -32,12 +31,16 @@ public class ConnectionListner {
             welcomeSocket = new ServerSocket(Porta);
             UI_ServerFacade.getSingletonInstance().reportMessage("Server Aperto");
 
+        } catch (BindException e){
+            throw new BindException();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        while (true) {
+        Socket connectionSocket = null;
+        while (StartServer.getSingletonInstance().isStarted() == true) {
 
-            Socket connectionSocket = null;
+
             try {
                 connectionSocket = welcomeSocket.accept();
             } catch (IOException e) {
@@ -66,6 +69,8 @@ public class ConnectionListner {
             }
 
         }
+        welcomeSocket.close();
+
 
 
     }
