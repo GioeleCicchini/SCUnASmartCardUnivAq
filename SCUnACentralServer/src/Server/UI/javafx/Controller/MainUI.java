@@ -1,5 +1,6 @@
 package Server.UI.javafx.Controller;
 
+import Server.Settings.ReadXMLFile;
 import Server.StartServer;
 import Server.UI.UI_ServerFacade;
 import Server.UI.javafx.Controller.Util.GraficalElement;
@@ -41,13 +42,12 @@ public class MainUI implements Initializable {
 
     }
 
-
     public void apriServer(){
         Task task = new Task<Void>() {
             @Override
             public Void call() throws Exception {
                 try{
-                    UI_ServerFacade.getSingletonInstance().setPorta(Integer.parseInt(porta.getText()));
+                   // UI_ServerFacade.getSingletonInstance().setPorta(Integer.parseInt(porta.getText()));
                     Platform.runLater(new Runnable() {
                         @Override public void run() {
                             porta.setEditable(false);
@@ -55,11 +55,9 @@ public class MainUI implements Initializable {
                             chiudiServerButton.setVisible(true);
                         }
                     });
-                    StartServer.getSingletonInstance().Start();
+                    ReadXMLFile.getSingletonInstance().LeggiImpostazioni();
                 }catch (NumberFormatException e2){
                     UI_ServerFacade.getSingletonInstance().reportMessage("Errore porta");
-                }catch (BindException e){
-                    UI_ServerFacade.getSingletonInstance().reportMessage("Server Già Aperto");
                 }
                 return null;
             }

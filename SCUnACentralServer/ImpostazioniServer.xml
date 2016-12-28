@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<Server>
+    <nome>SCUnACentralServer</nome>
+    <porta>6789</porta>
+
+    <servizio id="2001">
+        <nome>PingService</nome>
+        <servizioEsterno>
+            <nome>Prova Esterno</nome>
+            <indirizzoIp>localhost</indirizzoIp>
+            <porta>5000</porta>
+        </servizioEsterno>
+    </servizio>
+
+
+</Server>

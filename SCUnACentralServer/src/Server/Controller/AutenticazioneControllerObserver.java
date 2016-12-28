@@ -2,6 +2,7 @@ package Server.Controller;
 
 import Domain.Utente;
 import Server.ServerUtil.HibernateUtil;
+import Server.Settings.servizioEsterno;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -43,5 +44,15 @@ public class AutenticazioneControllerObserver implements Observer {
 
 
         }
+    }
+
+    @Override
+    public void setNome(String nome) {
+
+    }
+
+    @Override
+    public void setServiziEsterni(List<servizioEsterno> serviziEsterni) {
+
     }
 }

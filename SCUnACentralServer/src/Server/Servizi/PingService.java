@@ -1,5 +1,7 @@
-package Server.Controller;
+package Server.Servizi;
 
+import Server.Controller.ControllerFacade;
+import Server.Controller.Observer;
 import Server.ServerUtil.RispostaMaker;
 import Server.Settings.servizioEsterno;
 import Util.DTO;
@@ -10,7 +12,12 @@ import java.util.List;
 /**
  * Created by Febe on 24/12/2016.
  */
-public class PingServiceControllerObserver implements Observer{
+public class PingService implements Observer {
+
+
+    private List<servizioEsterno> serviziEsterni;
+    private String nomeServizio;
+
 
 
     @Override
@@ -29,11 +36,12 @@ public class PingServiceControllerObserver implements Observer{
 
     @Override
     public void setNome(String nome) {
-
+        this.nomeServizio = nomeServizio;
     }
 
     @Override
     public void setServiziEsterni(List<servizioEsterno> serviziEsterni) {
-
+        this.serviziEsterni = serviziEsterni;
     }
+
 }

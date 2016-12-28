@@ -1,11 +1,15 @@
 package Server;
 import Server.Controller.*;
 
+
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class StartServer {
 
 
+    private List<Observer> servizi = new ArrayList<>();
 
     private boolean started = false;
     private static StartServer singletonInstance = null;
@@ -21,16 +25,13 @@ public class StartServer {
 
     public void Start () throws IOException {
 
-        PingServiceControllerObserver pingServiceControllerObserver = new PingServiceControllerObserver();
-        AutenticazioneControllerObserver autenticazioneControllerObserver = new AutenticazioneControllerObserver();
-
-
 
         ControllerFacade controllerFacade = new ControllerFacade();
         ConnectionListner entrataServer = new ConnectionListner();
 
-        controllerFacade.Attach(pingServiceControllerObserver);
-        controllerFacade.Attach(autenticazioneControllerObserver);
+        for(Observer servizio : servizi){
+            controllerFacade.Attach(servizio);
+        }
 
 
         entrataServer.setControllerFacade(controllerFacade);
@@ -38,6 +39,11 @@ public class StartServer {
         setStarted(true);
         entrataServer.StartServer();
 
+    }
+
+
+    public void addServizio(Observer servizio){
+        servizi.add(servizio);
     }
 
     public boolean isStarted() {

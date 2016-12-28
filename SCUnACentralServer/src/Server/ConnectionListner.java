@@ -2,6 +2,7 @@ package Server;
 
 import Server.Controller.ControllerFacade;
 import Server.ServerUtil.RispostaMaker;
+import Server.Settings.ServerParameter;
 import Server.UI.UI_ServerFacade;
 import Util.DTO;
 
@@ -27,7 +28,7 @@ public class ConnectionListner {
     public void StartServer() throws IOException {
 
         try {
-            Integer Porta = UI_ServerFacade.getSingletonInstance().getPorta();
+            Integer Porta = ServerParameter.getSingletonInstance().getPorta();
             welcomeSocket = new ServerSocket(Porta);
             UI_ServerFacade.getSingletonInstance().reportMessage("Server Aperto");
 

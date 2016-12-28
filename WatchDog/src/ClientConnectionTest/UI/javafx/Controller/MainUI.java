@@ -39,7 +39,7 @@ public class MainUI implements Initializable {
                 while(true){
                     try {
                         ServiziOsservati.getSingletonInstance().PingToService();
-                        Thread.sleep(15000);
+                        Thread.sleep(1000);
                     } catch (IOException e) {
                         System.out.println("Errore di connessione");
                     }
