@@ -51,6 +51,12 @@ public class GraficalElement {
     }
 
 
+    public Label getServizioMonitorato(String servizio){
+        Label label = getLabel();
+        label.setText(servizio);
+        return label;
+    }
+
 
 
 

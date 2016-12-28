@@ -1,6 +1,6 @@
 package Server.Controller;
 
-import Server.Settings.servizioEsterno;
+import Server.ServerUtil.ServizioEsternoHolder;
 
 import java.util.List;
 
@@ -12,6 +12,6 @@ public interface Observer {
     void update(ControllerFacade controller);
 
     void setNome(String nome);
-    void setServiziEsterni(List<servizioEsterno> serviziEsterni);
+    void setServiziEsterni(List<ServizioEsternoHolder> serviziEsterni);
 
 }

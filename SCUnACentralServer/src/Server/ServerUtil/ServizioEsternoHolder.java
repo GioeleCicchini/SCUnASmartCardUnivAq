@@ -1,9 +1,9 @@
-package Server.Settings;
+package Server.ServerUtil;
 
 /**
  * Created by Febe on 28/12/2016.
  */
-public class servizioEsterno {
+public class ServizioEsternoHolder {
 
     private String nome;
     private String indirizzoIp;

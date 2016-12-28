@@ -3,7 +3,7 @@ package Server.Servizi;
 import Server.Controller.ControllerFacade;
 import Server.Controller.Observer;
 import Server.ServerUtil.RispostaMaker;
-import Server.Settings.servizioEsterno;
+import Server.ServerUtil.ServizioEsternoHolder;
 import Util.DTO;
 import Util.DTOMaker;
 
@@ -15,7 +15,7 @@ import java.util.List;
 public class PingService implements Observer {
 
 
-    private List<servizioEsterno> serviziEsterni;
+    private List<ServizioEsternoHolder> serviziEsterni;
     private String nomeServizio;
 
 
@@ -40,7 +40,7 @@ public class PingService implements Observer {
     }
 
     @Override
-    public void setServiziEsterni(List<servizioEsterno> serviziEsterni) {
+    public void setServiziEsterni(List<ServizioEsternoHolder> serviziEsterni) {
         this.serviziEsterni = serviziEsterni;
     }
 

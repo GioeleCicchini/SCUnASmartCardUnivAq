@@ -19,7 +19,7 @@
       <file leaf-file-name="Main.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientConnectionTest/UI/javafx/fxml/Main.fxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1088">
+            <state relative-caret-position="0">
               <caret line="64" column="50" lean-forward="false" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="50" />
               <folding />
             </state>
@@ -29,10 +29,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="MainUI.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/ClientConnectionTest/UI/javafx/Controller/MainUI.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="213">
+            <state relative-caret-position="264">
               <caret line="41" column="41" lean-forward="false" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -51,24 +51,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="ConcreteRemoteService.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="ConcreteRemoteService.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ClientConnectionTest/Fondation/TecnicalService/ConcreteRemoteService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
+            <state relative-caret-position="547">
               <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ServiziOsservati.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/ClientConnectionTest/UI/javafx/Controller/Util/ServiziOsservati.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="918">
-              <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -607,12 +595,12 @@
       <workItem from="1482771763883" duration="15231000" />
       <workItem from="1482848285449" duration="16444000" />
       <workItem from="1482934715309" duration="245000" />
-      <workItem from="1482950297126" duration="872000" />
+      <workItem from="1482950297126" duration="3475000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="32792000" />
+    <option name="totallyTimeSpent" value="35395000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="1" />
@@ -708,7 +696,7 @@
         <state relative-caret-position="918">
           <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -747,7 +735,7 @@
         <state relative-caret-position="918">
           <caret line="75" column="16" lean-forward="true" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -785,7 +773,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <element signature="imports" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -891,7 +879,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientConnectionTest/UI/javafx/fxml/Main.fxml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1088">
+        <state relative-caret-position="0">
           <caret line="64" column="50" lean-forward="false" selection-start-line="64" selection-start-column="49" selection-end-line="64" selection-end-column="50" />
           <folding />
         </state>
@@ -907,24 +895,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientConnectionTest/Fondation/TecnicalService/ConcreteRemoteService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/ClientConnectionTest/UI/javafx/Controller/Util/ServiziOsservati.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="918">
-          <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientConnectionTest/UI/ListaServizi.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="170">
@@ -935,11 +905,29 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ClientConnectionTest/UI/javafx/Controller/MainUI.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="213">
+        <state relative-caret-position="264">
           <caret line="41" column="41" lean-forward="false" selection-start-line="41" selection-start-column="41" selection-end-line="41" selection-end-column="41" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientConnectionTest/UI/javafx/Controller/Util/ServiziOsservati.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1057">
+          <caret line="75" column="16" lean-forward="false" selection-start-line="75" selection-start-column="16" selection-end-line="75" selection-end-column="16" />
+          <folding>
+            <element signature="imports" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/ClientConnectionTest/Fondation/TecnicalService/ConcreteRemoteService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="547">
+          <caret line="47" column="35" lean-forward="false" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

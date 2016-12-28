@@ -1,6 +1,7 @@
 package Server.UI.javafx.Controller;
 
-import Server.Settings.ReadXMLFile;
+import Server.Settings.ParserXMLFile;
+import Server.Settings.ServerParameter;
 import Server.StartServer;
 import Server.UI.UI_ServerFacade;
 import Server.UI.javafx.Controller.Util.GraficalElement;
@@ -8,14 +9,14 @@ import javafx.application.Platform;
 import javafx.concurrent.Task;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
+import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
 
-import javax.swing.*;
 import java.io.IOException;
-import java.net.BindException;
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 /**
@@ -24,10 +25,13 @@ import java.util.ResourceBundle;
 public class MainUI implements Initializable {
 
 
-    public TextField porta;
-    public VBox Servizi;
-    public AnchorPane scrollPanel;
+
+    public VBox LoggingVBox;
+    public AnchorPane scrollPanelLogging;
     public Button chiudiServerButton;
+    public VBox serviziAperti;
+    public Label NomeServer;
+    public ScrollPane Scroll;
 
 
     Thread th;
@@ -35,9 +39,22 @@ public class MainUI implements Initializable {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
 
-        UI_ServerFacade.getSingletonInstance().setServizi(Servizi);
-        UI_ServerFacade.getSingletonInstance().setScrollPanel(scrollPanel);
+        UI_ServerFacade.getSingletonInstance().setServizi(LoggingVBox);
+        UI_ServerFacade.getSingletonInstance().setScrollPanel(scrollPanelLogging);
+        UI_ServerFacade.getSingletonInstance().setScrollBar(Scroll);
+        try {
+            ParserXMLFile.getSingletonInstance().LeggiImpostazioni();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
+        // aggiungo la lista dei servizi monitorati sul interfaccia
+        List<String> serviziMonitorati = ServerParameter.getSingletonInstance().getServiziMonitorati();
+        for(String servizioMonitorato : serviziMonitorati){
+            serviziAperti.getChildren().add(GraficalElement.getSingletonInstance().getServizioMonitorato(servizioMonitorato));
+        }
+        // aggiungo Nome All'aplicazione
+        NomeServer.setText(ServerParameter.getSingletonInstance().getNome());
 
 
     }
@@ -47,15 +64,12 @@ public class MainUI implements Initializable {
             @Override
             public Void call() throws Exception {
                 try{
-                   // UI_ServerFacade.getSingletonInstance().setPorta(Integer.parseInt(porta.getText()));
                     Platform.runLater(new Runnable() {
                         @Override public void run() {
-                            porta.setEditable(false);
-                            porta.setDisable(true);
                             chiudiServerButton.setVisible(true);
                         }
                     });
-                    ReadXMLFile.getSingletonInstance().LeggiImpostazioni();
+                    StartServer.getSingletonInstance().Start();
                 }catch (NumberFormatException e2){
                     UI_ServerFacade.getSingletonInstance().reportMessage("Errore porta");
                 }
@@ -73,8 +87,6 @@ public class MainUI implements Initializable {
 
         Platform.runLater(new Runnable() {
             @Override public void run() {
-                porta.setEditable(true);
-                porta.setDisable(false);
                 chiudiServerButton.setVisible(false);
                 UI_ServerFacade.getSingletonInstance().reportMessage("Server Chiuso");
             }

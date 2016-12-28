@@ -1,8 +1,10 @@
-package Server.Controller;
+package Server.Servizi;
 
 import Domain.Utente;
+import Server.Controller.ControllerFacade;
+import Server.Controller.Observer;
 import Server.ServerUtil.HibernateUtil;
-import Server.Settings.servizioEsterno;
+import Server.ServerUtil.ServizioEsternoHolder;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -13,7 +15,7 @@ import java.util.List;
 /**
  * Created by Febe on 24/12/2016.
  */
-public class AutenticazioneControllerObserver implements Observer {
+public class AutenticazioneService implements Observer {
     @Override
     public void update(ControllerFacade controller) {
 
@@ -52,7 +54,7 @@ public class AutenticazioneControllerObserver implements Observer {
     }
 
     @Override
-    public void setServiziEsterni(List<servizioEsterno> serviziEsterni) {
+    public void setServiziEsterni(List<ServizioEsternoHolder> serviziEsterni) {
 
     }
 }

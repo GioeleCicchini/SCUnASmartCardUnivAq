@@ -1,6 +1,7 @@
 package Server.Settings;
 
 import Server.Controller.Observer;
+import Server.ServerUtil.ServizioEsternoHolder;
 import Server.StartServer;
 
 import java.util.List;
@@ -20,9 +21,8 @@ public class ServiziManager {
         return singletonInstance;
     }
 
-    public void addServizio(String nome, List<servizioEsterno> serviziEsterni) throws ClassNotFoundException {
+    public void addServizio(String nome, List<ServizioEsternoHolder> serviziEsterni) throws ClassNotFoundException {
 
-        System.out.println("aggiungo servizo"+" Server.Servizi" + nome);
             try {
                 Class classe = Class.forName("Server.Servizi." + nome);
                 Observer servizioIstanziato = (Observer) classe.newInstance();
