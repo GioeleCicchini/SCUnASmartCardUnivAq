@@ -5,6 +5,7 @@ import Server.Controller.ControllerFacade;
 import Server.Controller.Observer;
 import Server.ServerUtil.HibernateUtil;
 import Server.ServerUtil.ServizioEsternoHolder;
+import Server.Storage.Storage;
 import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
@@ -21,29 +22,10 @@ public class AutenticazioneService implements Observer {
 
         if (controller.getFunzione().equals("Autenticazione")) {
 
-
-
-
-            Session session = HibernateUtil.getSessionFactory().openSession();
-
-
-
             String id = (String) controller.getOggettiPersistenti().get(0);
             String Password = (String) controller.getOggettiPersistenti().get(1);
 
-
-            Criteria cr = session.createCriteria(Utente.class);
-            cr.add(Restrictions.eq("id", id));
-            List results = cr.list();
-
-            if(results.size() != 0){
-                System.out.println("trovato l'utente");
-            }
-
-
-
-
-
+            Storage.getSingletonInstance().getAutenticazione(id);
 
         }
     }
