@@ -40,7 +40,7 @@ public class ParserXMLFile {
 
             doc.getDocumentElement().normalize();
 
-            // Imposto i primi  servparametri deler. Nome e porta su cui verra aperto
+            // Imposto i primi parametri del server. Nome e porta su cui verra aperto
             ServerParameter.getSingletonInstance().setNome(doc.getElementsByTagName("nome").item(0).getTextContent());
             ServerParameter.getSingletonInstance().setPorta(Integer.parseInt(doc.getElementsByTagName("porta").item(0).getTextContent()));
 

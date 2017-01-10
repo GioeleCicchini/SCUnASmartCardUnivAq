@@ -1,12 +1,15 @@
 package Server.Storage;
 
+import Domain.Pagamento;
 import Domain.Utente;
 import Server.ServerUtil.HibernateUtil;
 import org.hibernate.Criteria;
+import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.criterion.Restrictions;
 
 import java.util.List;
+import java.util.UUID;
 
 /**
  * Created by beniamino on 09/01/17.
@@ -30,6 +33,34 @@ public class Storage {
 
         if(results.size() != 0){
             System.out.println("trovato l'utente");
+        }
+    }
+
+    public void pay(String idUtente, int amount) {
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Criteria cr = session.createCriteria(Utente.class);
+        cr.add(Restrictions.eq("id", idUtente));
+        List results = cr.list();
+        if(results.size() != 0){
+            Utente u = (Utente) results.get(0);
+            int currcredito = u.getCredito();
+            Pagamento p = new Pagamento();
+            p.setIdPagamento(UUID.randomUUID().toString());
+            p.setAmount(amount);
+            u.aggiungiPagamento(p);
+            if(currcredito >= amount) {
+                u.setCredito(currcredito - amount);
+            } else
+            {
+                System.err.println("Non c'è credito per questo utente");
+            }
+            try {
+                session.beginTransaction();
+                session.update(u);
+                session.getTransaction().commit();
+            } catch(HibernateException e) {
+                e.printStackTrace();
+            }
         }
     }
 }

@@ -9,7 +9,7 @@
         <property name="hibernate.connection.username">root</property>
         <property name="hibernate.connection.password"/>
 
-
+        <mapping resource="Server/DomainMapping/Pagamento.hbm.xml"/>
         <mapping resource="Server/DomainMapping/Utente.hbm.xml"/>
 
 

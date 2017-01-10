@@ -21,10 +21,7 @@ public class Main {
 
         DTO risp = (DTO) service.RichiediAlServer(dtoMaker.getPingDTO());
 
-        DTO risp2 = (DTO) service.RichiediAlServer(dtoMaker.getProva());
-
-
-
+        DTO risposta= (DTO) service.RichiediAlServer(dtoMaker.getPayments("Agostino",10));
 
 
         if (risp.getFunzione().equals("Ping")) {

@@ -11,6 +11,16 @@
         <property name="password">
             <column name="Password"></column>
         </property>
+        <property name="credito">
+            <column name="Credito"></column>
+        </property>
+
+
+        <list name="pagamenti" cascade="all" lazy="false">
+            <key column="id_Utente"/>
+            <list-index column="idx"/>
+            <one-to-many class="Domain.Pagamento"/>
+        </list>
 
 
 

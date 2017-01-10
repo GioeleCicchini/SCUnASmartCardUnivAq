@@ -38,12 +38,13 @@ public class DTOMaker {
         return dto;
     }
 
-    public DTO getProva() {
+    public DTO getPayments(String idUtente,int Amount){
         DTO dto = new DTO();
-        dto.setFunzione("Prova");
+        dto.setFunzione("Payment");
+        dto.aggiungiOggettoTrasferimento(idUtente);
+        dto.aggiungiOggettoTrasferimento(Amount);
         return dto;
     }
-
 
 
 

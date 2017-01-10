@@ -42,7 +42,7 @@ public class UI_ServerFacade implements UI_serverFacadeInterface {
     }
 
     @Override
-    public void reportMessage(String messaggio) {
+    public void reportMessage(final String messaggio) {
 
         Platform.runLater(new Runnable() {
             @Override public void run() {

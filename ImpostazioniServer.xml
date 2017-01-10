@@ -12,7 +12,7 @@
         </servizioEsterno>
     </servizio>
 
-    <servizio id="5000">
+    <servizio id="2001">
         <nome>AutenticazioneService</nome>
         <servizioEsterno>
             <nome>Prova Esterno</nome>
@@ -21,15 +21,8 @@
         </servizioEsterno>
     </servizio>
 
-
-  <servizio id="1000">
-        <nome>ProvaService</nome>
-        <servizioEsterno>
-            <nome>Prova Esterno</nome>
-            <indirizzoIp>localhost</indirizzoIp>
-            <porta>5000</porta>
-        </servizioEsterno>
+      <servizio id="2001">
+        <nome>PaymentService</nome>
     </servizio>
-
 
 </Server>
