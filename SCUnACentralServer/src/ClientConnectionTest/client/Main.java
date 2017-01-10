@@ -21,7 +21,7 @@ public class Main {
 
         DTO risp = (DTO) service.RichiediAlServer(dtoMaker.getPingDTO());
 
-        DTO risp2 = (DTO) service.RichiediAlServer(dtoMaker.getAutenticazione("1","123"));
+        DTO risp2 = (DTO) service.RichiediAlServer(dtoMaker.getProva());
 
 
 

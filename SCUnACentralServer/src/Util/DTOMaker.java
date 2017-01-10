@@ -38,6 +38,13 @@ public class DTOMaker {
         return dto;
     }
 
+    public DTO getProva() {
+        DTO dto = new DTO();
+        dto.setFunzione("Prova");
+        return dto;
+    }
+
+
 
 
 }
