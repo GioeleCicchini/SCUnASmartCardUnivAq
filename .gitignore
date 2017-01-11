@@ -1,4 +1,5 @@
-.idea/
+.idea
 */.DS_Store
-*.iml
-out/
+SCUnACentralServer.iml
+WatchDog.iml
+SCUnASmartCardUnivAq/SCUnACentralServer/src/hibernate.cfg.xml

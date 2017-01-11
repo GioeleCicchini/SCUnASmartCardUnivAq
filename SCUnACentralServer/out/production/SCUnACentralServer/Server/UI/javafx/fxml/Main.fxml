@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="333.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Server.UI.javafx.Controller.MainUI">
+   <children>
+      <VBox prefHeight="51.0" prefWidth="600.0">
+         <children>
+            <Label fx:id="NomeServer" prefHeight="34.0" prefWidth="575.0" text="SCUnA CentralServer">
+               <font>
+                  <Font size="23.0" />
+               </font>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <VBox prefHeight="291.0" prefWidth="600.0">
+         <children>
+            <HBox prefHeight="288.0" prefWidth="600.0">
+               <children>
+                  <VBox fx:id="serviziAperti" prefHeight="253.0" prefWidth="225.0">
+                     <children>
+                        <Label prefHeight="26.0" prefWidth="123.0" text="Servizi Monitorati:">
+                           <VBox.margin>
+                              <Insets left="25.0" />
+                           </VBox.margin>
+                        </Label>
+                     </children>
+                     <HBox.margin>
+                        <Insets top="35.0" />
+                     </HBox.margin>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+                  <VBox prefHeight="165.0" prefWidth="368.0">
+                     <children>
+                        <HBox prefHeight="27.0" prefWidth="270.0">
+                           <children>
+                              <Button mnemonicParsing="false" onMouseClicked="#apriServer" prefHeight="25.0" prefWidth="150.0" text="Apri Server" />
+                              <Button fx:id="chiudiServerButton" mnemonicParsing="false" onMouseClicked="#chiudiServer" prefHeight="25.0" prefWidth="150.0" text="Chiudi Server" visible="false" />
+                           </children>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </HBox>
+                        <ScrollPane fx:id="Scroll" prefHeight="236.0" prefWidth="285.0">
+                          <content>
+                            <AnchorPane fx:id="scrollPanelLogging" minHeight="0.0" minWidth="0.0" prefHeight="152.0" prefWidth="223.0">
+                                 <children>
+                                    <VBox fx:id="LoggingVBox" prefHeight="165.0" prefWidth="219.0" spacing="5.0" AnchorPane.topAnchor="0.0">
+                                       <padding>
+                                          <Insets left="5.0" top="10.0" />
+                                       </padding>
+                                    </VBox>
+                                 </children>
+                              </AnchorPane>
+                          </content>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </ScrollPane>
+                     </children>
+                  </VBox>
+                  <VBox prefHeight="200.0" prefWidth="100.0" />
+               </children>
+            </HBox>
+         </children>
+      </VBox>
+   </children>
+</VBox>
