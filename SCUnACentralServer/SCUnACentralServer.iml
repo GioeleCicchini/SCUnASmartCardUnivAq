@@ -18,5 +18,6 @@
     <orderEntry type="library" name="Hibernate 5.2.3-5.2.3" level="project" />
     <orderEntry type="module" module-name="SharedDomain" />
     <orderEntry type="library" name="mysql-connector-java-5.1.40-bin" level="project" />
+    <orderEntry type="library" name="DTO" level="project" />
   </component>
 </module>
