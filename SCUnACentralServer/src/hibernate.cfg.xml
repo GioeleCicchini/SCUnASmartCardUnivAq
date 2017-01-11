@@ -11,7 +11,7 @@
 
         <mapping resource="Server/DomainMapping/Pagamento.hbm.xml"/>
         <mapping resource="Server/DomainMapping/Utente.hbm.xml"/>
-
+        <mapping resource="Server/DomainMapping/Stanza.hbm.xml"/>
 
 
     </session-factory>

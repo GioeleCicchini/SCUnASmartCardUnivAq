@@ -1,6 +1,7 @@
 package Server.Storage;
 
 import Domain.Pagamento;
+import Domain.Stanza;
 import Domain.Utente;
 import Server.ServerUtil.HibernateUtil;
 import org.hibernate.Criteria;
@@ -24,6 +25,36 @@ public class Storage {
     private Storage() {
     }
 
+
+    public boolean getAutenticazioneStanza(String idUtente,String idStanza){
+        boolean Autorizzazione = false;
+        Utente utente = new Utente();
+
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Criteria cr = session.createCriteria(Utente.class);
+        cr.add(Restrictions.eq("id", idUtente));
+        List results = cr.list();
+
+        if(results.size() != 0){
+            System.out.println("trovato l'utente");
+            utente = (Utente) results.get(0);
+        }
+
+
+        Criteria cr2 = session.createCriteria(Stanza.class);
+        cr2.add(Restrictions.eq("idStanza", idStanza));
+        List resultsStanza = cr2.list();
+
+        if(resultsStanza.size() != 0){
+            if(utente.getLivelloAutorizzazione() >= ((Stanza) resultsStanza.get(0)).getLivelloAutorizzazione()){
+                Autorizzazione = true;
+                System.out.println("Autorizzaro");
+            }
+        }
+
+        return Autorizzazione;
+
+    }
 
     public void getAutenticazione (String id){
         Session session = HibernateUtil.getSessionFactory().openSession();

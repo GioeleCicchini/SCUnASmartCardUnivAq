@@ -4,7 +4,8 @@ import Server.Controller.ControllerFacade;
 import Server.ServerUtil.RispostaMaker;
 import Server.Settings.ServerParameter;
 import Server.UI.UI_ServerFacade;
-import Util.DTO;
+import org.dto.DTO;
+
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -12,6 +13,9 @@ import java.io.ObjectOutputStream;
 import java.net.BindException;
 import java.net.ServerSocket;
 import java.net.Socket;
+
+
+
 
 /**
  * Created by gioele on 16/02/16.

@@ -1,6 +1,8 @@
 package ClientConnectionTest.Fondation.TecnicalService;
 
-import Util.DTO;
+
+
+import org.dto.DTO;
 
 import java.io.IOException;
 

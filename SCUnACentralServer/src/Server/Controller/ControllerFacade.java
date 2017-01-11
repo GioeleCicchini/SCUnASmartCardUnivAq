@@ -1,8 +1,6 @@
 package Server.Controller;
 
-
-
-import Util.DTO;
+import org.dto.DTO;
 
 import java.io.Serializable;
 import java.util.ArrayList;

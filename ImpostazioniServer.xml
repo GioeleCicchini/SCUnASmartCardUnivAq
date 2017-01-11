@@ -25,4 +25,8 @@
         <nome>PaymentService</nome>
     </servizio>
 
+    <servizio id="2002">
+        <nome>AutenticazioneStanzaService</nome>
+    </servizio>
+
 </Server>

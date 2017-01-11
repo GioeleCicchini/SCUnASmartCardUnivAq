@@ -1,7 +1,7 @@
 package Server.ServerUtil;
 
 
-import Util.DTO;
+import org.dto.DTO;
 
 /**
  * Created by Gioele on 05/03/2016.

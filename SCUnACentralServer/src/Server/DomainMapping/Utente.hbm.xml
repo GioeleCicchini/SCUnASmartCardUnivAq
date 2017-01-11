@@ -15,6 +15,10 @@
             <column name="Credito"></column>
         </property>
 
+        <property name="livelloAutorizzazione">
+            <column name="LivelloAutorizzazione"></column>
+        </property>
+
 
         <list name="pagamenti" cascade="all" lazy="false">
             <key column="id_Utente"/>

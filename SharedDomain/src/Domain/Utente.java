@@ -10,6 +10,7 @@ public class Utente {
     private String id;
     private String Password;
     private List<Pagamento> pagamenti;
+    private int livelloAutorizzazione;
     private int credito;
 
     public int getCredito() {
@@ -49,5 +50,13 @@ public class Utente {
 
     public void setPassword(String password) {
         Password = password;
+    }
+
+    public int getLivelloAutorizzazione() {
+        return livelloAutorizzazione;
+    }
+
+    public void setLivelloAutorizzazione(int livelloAutorizzazione) {
+        this.livelloAutorizzazione = livelloAutorizzazione;
     }
 }

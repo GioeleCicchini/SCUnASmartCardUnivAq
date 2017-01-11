@@ -2,10 +2,11 @@ package Server.Servizi;
 
 import Server.Controller.ControllerFacade;
 import Server.Controller.Observer;
+import Server.ServerUtil.DTOMaker;
 import Server.ServerUtil.RispostaMaker;
 import Server.ServerUtil.ServizioEsternoHolder;
-import Util.DTO;
-import Util.DTOMaker;
+import org.dto.DTO;
+
 
 import java.util.List;
 
