@@ -1,6 +1,7 @@
 package Util;
 
 
+import org.dto.DTO;
 
 /**
  * Created by gioele on 04/03/16.

@@ -2,6 +2,7 @@ package Server.UI.javafx;/**
  * Created by Febe on 26/12/2016.
  */
 
+import Server.ServerUtil.HibernateUtil;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Parent;
@@ -20,11 +21,16 @@ public class MainUI extends Application {
     public void start(Stage primaryStage) throws IOException {
 
         Parent root = FXMLLoader.load(getClass().getResource("fxml/Main.fxml"));
-        primaryStage.setTitle("WatchDog");
+        primaryStage.setTitle("ScunaServer");
         primaryStage.setScene(new Scene(root));
         primaryStage.show();
 
 
 
+    }
+
+    @Override
+    public void stop() throws Exception {
+        HibernateUtil.getSessionFactory().close();
     }
 }

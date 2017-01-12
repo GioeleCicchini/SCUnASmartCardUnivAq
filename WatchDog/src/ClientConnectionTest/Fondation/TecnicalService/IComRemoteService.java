@@ -1,6 +1,6 @@
 package ClientConnectionTest.Fondation.TecnicalService;
 
-import Util.DTO;
+import org.dto.DTO;
 
 import java.io.IOException;
 
@@ -9,7 +9,7 @@ import java.io.IOException;
  */
 public interface IComRemoteService {
 
-    Object RichiediAlServer(DTO dto,String indirizzo,Integer porta) throws IOException, ClassNotFoundException;
+    Object RichiediAlServer(DTO dto, String indirizzo, Integer porta) throws IOException, ClassNotFoundException;
 
 
 }

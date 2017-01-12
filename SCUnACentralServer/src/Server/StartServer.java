@@ -1,5 +1,6 @@
 package Server;
 import Server.Controller.*;
+import Server.ServerUtil.HibernateUtil;
 
 
 import java.io.IOException;
@@ -38,6 +39,7 @@ public class StartServer {
 
         setStarted(true);
         entrataServer.StartServer();
+
 
     }
 

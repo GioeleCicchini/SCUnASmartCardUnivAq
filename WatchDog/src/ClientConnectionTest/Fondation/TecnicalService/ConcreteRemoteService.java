@@ -1,6 +1,6 @@
 package ClientConnectionTest.Fondation.TecnicalService;
 
-import Util.DTO;
+import org.dto.DTO;
 
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -26,7 +26,7 @@ public class ConcreteRemoteService implements IComRemoteService {
 
 
     @Override
-    public DTO RichiediAlServer(DTO dto,String indirizzo,Integer porta) throws IOException, ClassNotFoundException {
+    public DTO RichiediAlServer(DTO dto, String indirizzo, Integer porta) throws IOException, ClassNotFoundException {
         Socket clientSocket = new Socket(indirizzo, porta);
         DTO risp = null;
         try {

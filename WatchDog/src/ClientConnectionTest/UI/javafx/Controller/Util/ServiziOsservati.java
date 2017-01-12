@@ -2,18 +2,15 @@ package ClientConnectionTest.UI.javafx.Controller.Util;
 
 import ClientConnectionTest.Fondation.TecnicalService.ConcreteRemoteService;
 import ClientConnectionTest.UI.ListaServizi;
-import Util.DTO;
 import Util.DTOMaker;
 import javafx.application.Platform;
 import javafx.geometry.Insets;
 import javafx.scene.control.Label;
 import javafx.scene.layout.*;
+import org.dto.DTO;
 
-import javax.swing.*;
 import java.io.IOException;
-import java.net.SocketException;
 import java.util.ArrayList;
-import java.util.concurrent.TimeoutException;
 
 /**
  * Created by Febe on 26/12/2016.

@@ -1,6 +1,7 @@
 package Server;
 
 import Server.Controller.ControllerFacade;
+import Server.ServerUtil.HibernateUtil;
 import Server.ServerUtil.RispostaMaker;
 import Server.Settings.ServerParameter;
 import Server.UI.UI_ServerFacade;
@@ -74,6 +75,7 @@ public class ConnectionListner {
             }
 
         }
+
         welcomeSocket.close();
 
 
